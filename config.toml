@@ -1,0 +1,57 @@
+baseurl = "https://marchenko.tech"
+title = "marchenko.tech"
+theme = "ghostwriter"
+languageCode = "en-us"
+copyright = "Daniil Marchenko"
+#disqusShortname = "XXX"
+#googleAnalytics = "XXX"
+
+[Author]
+    name = "Daniil. Marchenko"
+#    profile = "https://google.com/+XXX"
+
+[Taxonomies]
+    tag = "tags"
+
+[Params]
+    intro = true
+    headline = "Daniil Marchenko"
+    description = "Riding the DevOps hype train"
+    github = "https://github.com/sonofhammer"
+#    gitlab = "https://gitlab.com/XXX"
+    linkedin = "https://www.linkedin.com/in/daniil-marchenko-8a984623/"
+#    gplus = "https://google.com/+XXX"
+    twitter = "https://twitter.com/sonofhammer"
+#    stackoverflow = "https://stackoverflow.com/users/XXX/YYY"
+#    email = "XXX@example.com"
+    opengraph = true
+    shareTwitter = true
+    shareFacebook = true
+    shareGooglePlus = true
+    shareLinkedIn = false
+    dateFormat = "Mon, Jan 2, 2006"
+    highlightJsUrl = ""
+    highlightJsLocalUrl = ""
+
+#[Permalinks]
+#   post = "/:year/:month/:day/:filename/"
+
+ [[menu.main]]
+     name = "Blog"
+     url = "/post/"
+     weight = 1
+
+# [[menu.main]]
+#     name = "Projects"
+#     url = "/project/"
+#     weight = 2
+
+#[[menu.main]]
+#    name = "Contact"
+#    url = "/contact/"
+#    weight = 3
+
+[[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
