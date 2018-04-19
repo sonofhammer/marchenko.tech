@@ -5,7 +5,9 @@ variables:
 
 pages:
   script:
-  - npm install \themes\ghostwriter\package.json
+  - cd \themes\ghostwriter
+  - npm install 
+  - cd ~
   - hugo
   artifacts:
     paths:
