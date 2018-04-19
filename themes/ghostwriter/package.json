@@ -6,7 +6,7 @@
   "author": "Juraj Bubniak <juraj.bubniak@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
+    "build": "./node_modules/webpack/bin/webpack",
     "watch": "webpack --progress --colors --watch"
   },
   "devDependencies": {
