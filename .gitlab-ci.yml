@@ -5,7 +5,7 @@ variables:
 
 job1:
   script:
-  - cd \themes\ghostwriter
+  - cd /themes/ghostwriter
   - npm install
 
 pages:
