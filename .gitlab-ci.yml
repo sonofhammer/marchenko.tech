@@ -1,4 +1,4 @@
-image: macodigo/hugo-nodejs-macodigo
+image: jank1310/hugo-node-docker
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
@@ -6,6 +6,7 @@ variables:
 before_script:
   - cd '/builds/daniil.marchenko/marchenko.tech/themes/ghostwriter/'
   - npm install
+  - cd '/builds/daniil.marchenko/marchenko.tech/'
 
 pages:
   script:
