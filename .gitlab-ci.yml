@@ -3,10 +3,7 @@ image: macodigo/hugo-nodejs-macodigo
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
-job1:
-  path: 
-  - themes/ghostwriter/
-  script:
+before_script:
   - npm install
 
 pages:
