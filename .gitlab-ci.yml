@@ -4,6 +4,7 @@ variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
 before_script:
+  - cd '/builds/daniil.marchenko/marchenko.tech/themes/ghostwriter/'
   - npm install
 
 pages:
