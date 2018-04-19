@@ -1,11 +1,12 @@
-image: monachus/hugo
+image: macodigo/hugo-nodejs-macodigo
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
 job1:
-  script:
-  - cd /themes/ghostwriter
+  paths: 
+  - themes/ghostwriter/
+    script:
   - npm install
 
 pages:
