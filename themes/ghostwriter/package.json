@@ -7,8 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack",
-    "watch": "webpack --progress --colors --watch",
-    "postinstall": "hugo"
+    "watch": "webpack --progress --colors --watch"
   },
   "devDependencies": {
     "css-loader": "^0.28.7",
