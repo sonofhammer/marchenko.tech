@@ -6,7 +6,7 @@ variables:
 job1:
   paths: 
   - themes/ghostwriter/
-    script:
+  script:
   - npm install
 
 pages:
