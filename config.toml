@@ -1,4 +1,4 @@
-baseurl = "https://daniil.marchenko.gitlab.io/marchenko.tech/"
+baseurl = "https://marchenko.tech/"
 title = "marchenko.tech"
 theme = "ghostwriter"
 languageCode = "en-us"
@@ -16,10 +16,10 @@ copyright = "Daniil Marchenko"
 [Params]
     intro = true
     headline = "Daniil Marchenko"
-    description = "Riding the DevOps hype train"
+    description = ""
     github = "https://github.com/sonofhammer"
 #    gitlab = "https://gitlab.com/XXX"
-    linkedin = "https://www.linkedin.com/in/daniil-marchenko-8a984623/"
+#    linkedin = "https://www.linkedin.com/in/daniil-marchenko-8a984623/"
 #    gplus = "https://google.com/+XXX"
     twitter = "https://twitter.com/sonofhammer"
 #    stackoverflow = "https://stackoverflow.com/users/XXX/YYY"
