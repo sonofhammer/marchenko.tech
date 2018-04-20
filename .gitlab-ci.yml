@@ -6,11 +6,12 @@ variables:
 before_script:
   - cd '/builds/daniil.marchenko/marchenko.tech/themes/ghostwriter/'
   - npm install
+  - npm build
   - cd '/builds/daniil.marchenko/marchenko.tech/'
 
 pages:
   script:
-  - hugo
+  - hugo 
   artifacts:
     paths:
     - public
