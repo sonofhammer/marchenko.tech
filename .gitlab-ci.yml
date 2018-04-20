@@ -1,4 +1,4 @@
-image: bpack/hugo-npm
+image: jank1310/hugo-node-docker
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
