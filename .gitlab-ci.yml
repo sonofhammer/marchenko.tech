@@ -6,7 +6,7 @@ variables:
 before_script:
   - cd '/builds/daniil.marchenko/marchenko.tech/themes/ghostwriter/'
   - npm install
-  - npm build
+  - npm run build
   - cd '/builds/daniil.marchenko/marchenko.tech/'
 
 pages:
