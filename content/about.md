@@ -1,10 +1,12 @@
 +++
 title = "About"
-date = 2018-04-19T02:13:50Z
+date = 2019-04-02
 author = "Daniil Marchenko"
 description = ""
 +++
 
-Stuff about me goes here
+I started my tech journey in middle school by coding BASIC on a TI-83 calculator.
 
-Some more stuff here (Testing CI)
+I then took a roundabout way into tech by getting a Masters Degree in Counseling.
+
+Now I talk to computers about their feelings.
