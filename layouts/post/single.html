@@ -1,0 +1,24 @@
+{{ partial "header.html" . }}
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        {{ partial "post-header.html" . }}
+
+        {{ partial "post-content.html" . }}
+
+        {{ partial "post-footer.html" . }}
+
+        {{ partial "disqus.html" . }}
+    </article>
+</div>
+
+<script src="https://utteranc.es/client.js"
+        repo="sonofhammer/marchenko.tech"
+        issue-term="pathname"
+        label="Comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+{{ partial "footer.html" . }}
