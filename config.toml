@@ -4,7 +4,7 @@ theme = "ghostwriter"
 languageCode = "en-us"
 copyright = "Daniil Marchenko"
 #disqusShortname = "XXX"
-#googleAnalytics = "XXX"
+googleAnalytics = "UA-158954438-1"
 
 [Author]
     name = "Daniil Marchenko"
@@ -28,13 +28,13 @@ copyright = "Daniil Marchenko"
     shareTwitter = true
     shareFacebook = false
     shareGooglePlus = false
-    shareLinkedIn = true
+    shareLinkedIn = false
     dateFormat = "Mon, Jan 2, 2006"
     highlightJsUrl = ""
     highlightJsLocalUrl = ""
 
-#[Permalinks]
-#   post = "/:year/:month/:day/:filename/"
+[Permalinks]
+   post = "/:year/:month/:day/:filename/"
 
  [[menu.main]]
      name = "Blog"
