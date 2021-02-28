@@ -1,0 +1,67 @@
+baseurl: "https://marchenko.tech/"
+title: marchenko.tech
+theme: ghostwriter
+languageCode: en-us
+copyright: Daniil Marchenko
+#disqusShortname: "XXX"
+googleAnalytics: UA-158954438-1
+pygmentsUseClasses: true
+pygmentsCodefences: true
+
+markup:
+  highlight:
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    tabWidth: 2
+
+privacy:
+  disqus:
+    disable: true
+  googleAnalytics:
+    anonymizeIP: true
+    respectDoNotTrack: true
+    useSessionStorage: false
+
+author:
+  name: Daniil Marchenko
+  profile: ""
+
+taxonomies:
+  tag: tags
+
+params:
+  mainSections: 
+    - post
+  intro: true
+  headline: Daniil Marchenko
+  description: ""
+  github: https://github.com/sonofhammer
+# gitlab: "https://gitlab.com/XXX"
+  linkedin: "https://www.linkedin.com/in/daniil-marchenko-8a984623/"
+  twitter: "https://twitter.com/sonofhammer"
+# stackoverflow: "https://stackoverflow.com/users/XXX/YYY"
+# email: "XXX@example.com"
+  opengraph: true
+  shareTwitter: true
+  shareFacebook: false
+  shareLinkedIn: false
+  dateFormat: "Mon, Jan 2, 2006"
+  highlightJsUrl: ""
+  highlightJsLocalUrl: ""
+
+permalinks:
+   post: "/:year/:month/:day/:filename/"
+
+menu:
+  main:
+    - name: "Blog"
+      url: "/post/"
+      weight: 1
+    - name: "About"
+      url: "/about/"
+      weight: 4
