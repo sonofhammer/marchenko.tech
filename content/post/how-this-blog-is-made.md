@@ -1,6 +1,7 @@
 ---
 title: "How This Blog Is Made"
 date: 2019-10-07
+lastmod: 2020-02-27
 author: Daniil Marchenko
 
 ---
@@ -20,7 +21,7 @@ Some Domain registrars to explore
 
 There are plenty of static site generators written in a variety of languages, from [C#](https://wyam.io/) to [Python](https://blog.getpelican.com/) to [Go](https://gohugo.io/). This site is created using Hugo, so the rest of the post will follow that.
 
-To create a static site in Hugo head on over to [GoHugo.io](https://gohugo.io/) and look over their docs to get an idea idea of how to install it on your operating system. The steps below are outlined for a Windows OS.
+To create a static site in Hugo, head on over to [GoHugo.io](https://gohugo.io/) and look over their docs to get an idea of how to install it on your operating system. The steps below are outlined for a Windows OS.
 
 ### Get Chocolatey
 
@@ -44,11 +45,11 @@ To make things easier to change directory (`cd`) to `sampleSite` and initialize 
 
 ### Set a Theme
 
-As of this post, this blog is using [Ghostwriter theme](https://themes.gohugo.io/ghostwriter/). However the directions for using the theme are not the best, since they instruct you to clone the repo directly. Instead of cloning the repository into the `/themes` directory in the site, setting it up as a git sub-module makes it a bit more easier to manage separately from the rest of the site's content.
+As of this post, this blog is using [Ghostwriter theme](https://themes.gohugo.io/ghostwriter/). However the directions for using the theme are not the best, since they instruct you to clone the repo directly. Instead of cloning the repository into the `/themes` directory in the site, setting it up as a git sub-module makes it a bit easier to manage separately from the rest of the site's content. 
 
 To set up the theme as a submodule run `git submodule add https://github.com/jbub/ghostwriter themes/ghostwriter`
 
-Add a line in `config.toml` to set the theme: `theme = "ghostwriter"`.
+Add a line in `config.yml` to set the theme: `theme = "ghostwriter"`.
 
 ### Create a New Post
 
@@ -72,24 +73,41 @@ Click the *New site from Git* button and follow the on-screen instructions. Be s
 
 Because some themes are more special than others, Some of them require special build steps to function properly.
 
-### Some Build Troubleshooting
+### Building your site
 
-Ghostwriter theme in particular was a bit of a pain. It uses yarn packages and Netlify didn't want to build it at first. To build it, we need to restore yarn packages, and to do that, we need yarn on the build machine.
+Ghostwriter theme requires to be built before it can be used. To build it, we need to run a few npm, and to do that, we need node on the build agent.
 
-Head on over to the "Environment" section of the build definition in Netlify and create a `HUGO_VERSION` and `YARN_VERSION` variables containing appropriate version numbers ( `0.53` and `1.17.3` as of this publication)
+Netlify is clever enough to know that it needs to install node if you add a `.node_version` at the root of the repository. In this case, I created a file with `14.16.0` in it.
 
-in the build command type the following `cd themes/ghostwriter/ && yarn && yarn run build && cd ../../ && hugo -v`
+Netlify also needs instructions on how to build a site. To do that we can create a `netlify.toml` file at the root of the repository containing the instructions for building the site. 
 
->`cd themes/ghostwriter/` = changes the current  working directory </br>
-`yarn` = installs yarn packages </br>
-`yarn run build` = builds the yarn packages </br>
-`cd ../../` = walks back up the directory structure </br>
-`hugo -v` = builds hugo site using verbose logging verbose logging </br>
+The file for this site contains the following:
+
+```toml
+[build]
+command = "cd themes/ghostwriter/ && npm ci && npm run build && cd ../../ && hugo --gc --minify -v"
+publish = "public"
+
+[build.environment]
+HUGO_VERSION = "0.81.0"
+```
+
+The build command contains the following parts
+
+`cd themes/ghostwriter/` = changes the current working directory\
+`npm ci` = installs npm packages\
+`npm run build` = builds the theme\
+`cd ../../` = walks back up the directory structure\
+`hugo --gc --minify -v` = builds hugo site\
+
+The `publish` element specifies which directory to publish, and the `HUGO_VERSION` specifies which hugo version to use.
+
+More information on how to build a hugo site on netlify can be found in [Netlify's](https://docs.netlify.com/configure-builds/common-configurations/hugo/) and [Hugo's](https://gohugo.io/hosting-and-deployment/hosting-on-netlify/) docs.
 
 ## 5. Configure Netlify to use Let's Encrypt SSL (free)
 
-[Let's Encrypt](https://letsencrypt.org/) allows you to encrypt your website, allowing your visitors to connect to it over https instead of http.
+[Let's Encrypt](https://letsencrypt.org/) allows you to encrypt the website, allowing visitors to connect to it over https instead of http.
 
-On Netlify, Under "Domain management" section of your site, select HTTPS and configure the SSL certificate from Let's Encrypt.
+On Netlify, Under "Domain management" section of the site, select HTTPS and configure the SSL certificate from Let's Encrypt.
 
 That's it! Your very own static blog should be up and running.
