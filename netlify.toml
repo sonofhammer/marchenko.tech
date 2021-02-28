@@ -1,0 +1,6 @@
+[build]
+command = "cd themes/ghostwriter/ && npm ci && npm run build && cd ../../ && hugo --gc --minify -v"
+publish = "public"
+
+[build.environment]
+HUGO_VERSION = "0.81.0"
